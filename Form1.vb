@@ -5,7 +5,7 @@
         Dim fone As String = txtFone.Text
 
         If fone.Length < 15 Then
-            MsgBox("Digite um número de telefone válido.")
+            MsgBox("Por favor, insira um número de telefone válido.")
             btnSearch.Enabled = True
             Me.Cursor = Cursors.Default
             Exit Sub
@@ -14,7 +14,7 @@
         Dim viagem As Viagem = Await BuscarViagem(fone)
 
         If viagem Is Nothing Or viagem.Vazia Then
-            MsgBox("Não foi encontrado viagem com este número de telefone.")
+            MsgBox("Não encontramos nenhuma viagem associada a este número.")
             btnSearch.Enabled = True
             Me.Cursor = Cursors.Default
             Exit Sub

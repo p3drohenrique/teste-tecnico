@@ -18,3 +18,4 @@ C:\Users\Overlord\source\repos\TravelData\bin\Debug\net8.0-windows\Newtonsoft.Js
 C:\Users\Overlord\source\repos\TravelData\obj\Debug\net8.0-windows\TravelData.vbproj.AssemblyReference.cache
 C:\Users\Overlord\source\repos\TravelData\obj\Debug\net8.0-windows\TravelData.vbproj.Up2Date
 C:\Users\Overlord\source\repos\TravelData\obj\Debug\net8.0-windows\TravelData.Form2.resources
+C:\Users\Overlord\source\repos\TravelData\obj\Debug\net8.0-windows\TravelData.sourcelink.json

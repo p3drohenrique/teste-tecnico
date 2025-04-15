@@ -23,7 +23,7 @@ Partial Class Form2
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         components = New ComponentModel.Container()
-        dataViewSuppliers = New TabControl()
+        tabsWithData = New TabControl()
         TabPage1 = New TabPage()
         lblPhone = New Label()
         lblTitlePhone = New Label()
@@ -48,41 +48,42 @@ Partial Class Form2
         lblTravelNumber = New Label()
         lblTitleTravelNumber = New Label()
         TabPage2 = New TabPage()
-        TabPage3 = New TabPage()
-        DataGridView1 = New DataGridView()
-        FornecedoBindingSource = New BindingSource(components)
-        dataViewPlantas = New DataGridView()
-        PlantaBindingSource = New BindingSource(components)
-        CNPJDataGridViewTextBoxColumn1 = New DataGridViewTextBoxColumn()
-        CodigoDataGridViewTextBoxColumn = New DataGridViewTextBoxColumn()
-        DescricaoDataGridViewTextBoxColumn = New DataGridViewTextBoxColumn()
+        dgvSuppliers = New DataGridView()
         CNPJDataGridViewTextBoxColumn = New DataGridViewTextBoxColumn()
         CodigoGeralDataGridViewTextBoxColumn = New DataGridViewTextBoxColumn()
         DescricaoParadaDataGridViewTextBoxColumn = New DataGridViewTextBoxColumn()
         EnderecoDataGridViewTextBoxColumn = New DataGridViewTextBoxColumn()
         OrdemParadaDataGridViewTextBoxColumn = New DataGridViewTextBoxColumn()
         RazaoSocialDataGridViewTextBoxColumn = New DataGridViewTextBoxColumn()
-        dataViewSuppliers.SuspendLayout()
+        FornecedoBindingSource = New BindingSource(components)
+        TabPage3 = New TabPage()
+        dgvPlants = New DataGridView()
+        CNPJDataGridViewTextBoxColumn1 = New DataGridViewTextBoxColumn()
+        CodigoDataGridViewTextBoxColumn = New DataGridViewTextBoxColumn()
+        DescricaoDataGridViewTextBoxColumn = New DataGridViewTextBoxColumn()
+        PlantaBindingSource = New BindingSource(components)
+        tabsWithData.SuspendLayout()
         TabPage1.SuspendLayout()
         TabPage2.SuspendLayout()
-        TabPage3.SuspendLayout()
-        CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
+        CType(dgvSuppliers, ComponentModel.ISupportInitialize).BeginInit()
         CType(FornecedoBindingSource, ComponentModel.ISupportInitialize).BeginInit()
-        CType(dataViewPlantas, ComponentModel.ISupportInitialize).BeginInit()
+        TabPage3.SuspendLayout()
+        CType(dgvPlants, ComponentModel.ISupportInitialize).BeginInit()
         CType(PlantaBindingSource, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
-        ' dataViewSuppliers
+        ' tabsWithData
         ' 
-        dataViewSuppliers.Controls.Add(TabPage1)
-        dataViewSuppliers.Controls.Add(TabPage2)
-        dataViewSuppliers.Controls.Add(TabPage3)
-        dataViewSuppliers.Font = New Font("JetBrainsMonoNL NF", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        dataViewSuppliers.Location = New Point(1, 13)
-        dataViewSuppliers.Name = "dataViewSuppliers"
-        dataViewSuppliers.SelectedIndex = 0
-        dataViewSuppliers.Size = New Size(530, 468)
-        dataViewSuppliers.TabIndex = 0
+        tabsWithData.Controls.Add(TabPage1)
+        tabsWithData.Controls.Add(TabPage2)
+        tabsWithData.Controls.Add(TabPage3)
+        tabsWithData.Dock = DockStyle.Fill
+        tabsWithData.Font = New Font("JetBrainsMonoNL NF", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        tabsWithData.Location = New Point(0, 0)
+        tabsWithData.Name = "tabsWithData"
+        tabsWithData.SelectedIndex = 0
+        tabsWithData.Size = New Size(533, 480)
+        tabsWithData.TabIndex = 0
         ' 
         ' TabPage1
         ' 
@@ -111,7 +112,7 @@ Partial Class Form2
         TabPage1.Location = New Point(4, 25)
         TabPage1.Name = "TabPage1"
         TabPage1.Padding = New Padding(3)
-        TabPage1.Size = New Size(522, 439)
+        TabPage1.Size = New Size(525, 451)
         TabPage1.TabIndex = 0
         TabPage1.Text = "Dados Gerais"
         TabPage1.UseVisualStyleBackColor = True
@@ -338,78 +339,31 @@ Partial Class Form2
         ' 
         ' TabPage2
         ' 
-        TabPage2.Controls.Add(DataGridView1)
+        TabPage2.Controls.Add(dgvSuppliers)
         TabPage2.Location = New Point(4, 25)
         TabPage2.Name = "TabPage2"
         TabPage2.Padding = New Padding(3)
-        TabPage2.Size = New Size(522, 439)
+        TabPage2.Size = New Size(525, 451)
         TabPage2.TabIndex = 1
         TabPage2.Text = "Fornecedores"
         TabPage2.UseVisualStyleBackColor = True
         ' 
-        ' TabPage3
+        ' dgvSuppliers
         ' 
-        TabPage3.Controls.Add(dataViewPlantas)
-        TabPage3.Location = New Point(4, 25)
-        TabPage3.Name = "TabPage3"
-        TabPage3.Padding = New Padding(3)
-        TabPage3.Size = New Size(522, 439)
-        TabPage3.TabIndex = 2
-        TabPage3.Text = "Plantas"
-        TabPage3.UseVisualStyleBackColor = True
-        ' 
-        ' DataGridView1
-        ' 
-        DataGridView1.AllowUserToAddRows = False
-        DataGridView1.AllowUserToDeleteRows = False
-        DataGridView1.AutoGenerateColumns = False
-        DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView1.Columns.AddRange(New DataGridViewColumn() {CNPJDataGridViewTextBoxColumn, CodigoGeralDataGridViewTextBoxColumn, DescricaoParadaDataGridViewTextBoxColumn, EnderecoDataGridViewTextBoxColumn, OrdemParadaDataGridViewTextBoxColumn, RazaoSocialDataGridViewTextBoxColumn})
-        DataGridView1.DataSource = FornecedoBindingSource
-        DataGridView1.Location = New Point(0, 0)
-        DataGridView1.Name = "DataGridView1"
-        DataGridView1.ReadOnly = True
-        DataGridView1.Size = New Size(522, 439)
-        DataGridView1.TabIndex = 0
-        ' 
-        ' FornecedoBindingSource
-        ' 
-        FornecedoBindingSource.DataSource = GetType(Fornecedo)
-        ' 
-        ' dataViewPlantas
-        ' 
-        dataViewPlantas.AllowUserToAddRows = False
-        dataViewPlantas.AllowUserToDeleteRows = False
-        dataViewPlantas.AutoGenerateColumns = False
-        dataViewPlantas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        dataViewPlantas.Columns.AddRange(New DataGridViewColumn() {CNPJDataGridViewTextBoxColumn1, CodigoDataGridViewTextBoxColumn, DescricaoDataGridViewTextBoxColumn})
-        dataViewPlantas.DataSource = PlantaBindingSource
-        dataViewPlantas.Location = New Point(0, 0)
-        dataViewPlantas.Name = "dataViewPlantas"
-        dataViewPlantas.Size = New Size(522, 439)
-        dataViewPlantas.TabIndex = 0
-        ' 
-        ' PlantaBindingSource
-        ' 
-        PlantaBindingSource.DataSource = GetType(Planta)
-        ' 
-        ' CNPJDataGridViewTextBoxColumn1
-        ' 
-        CNPJDataGridViewTextBoxColumn1.DataPropertyName = "CNPJ"
-        CNPJDataGridViewTextBoxColumn1.HeaderText = "CNPJ"
-        CNPJDataGridViewTextBoxColumn1.Name = "CNPJDataGridViewTextBoxColumn1"
-        ' 
-        ' CodigoDataGridViewTextBoxColumn
-        ' 
-        CodigoDataGridViewTextBoxColumn.DataPropertyName = "Codigo"
-        CodigoDataGridViewTextBoxColumn.HeaderText = "Código"
-        CodigoDataGridViewTextBoxColumn.Name = "CodigoDataGridViewTextBoxColumn"
-        ' 
-        ' DescricaoDataGridViewTextBoxColumn
-        ' 
-        DescricaoDataGridViewTextBoxColumn.DataPropertyName = "Descricao"
-        DescricaoDataGridViewTextBoxColumn.HeaderText = "Descrição"
-        DescricaoDataGridViewTextBoxColumn.Name = "DescricaoDataGridViewTextBoxColumn"
+        dgvSuppliers.AccessibleRole = AccessibleRole.TitleBar
+        dgvSuppliers.AllowUserToAddRows = False
+        dgvSuppliers.AllowUserToDeleteRows = False
+        dgvSuppliers.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        dgvSuppliers.AutoGenerateColumns = False
+        dgvSuppliers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+        dgvSuppliers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        dgvSuppliers.Columns.AddRange(New DataGridViewColumn() {CNPJDataGridViewTextBoxColumn, CodigoGeralDataGridViewTextBoxColumn, DescricaoParadaDataGridViewTextBoxColumn, EnderecoDataGridViewTextBoxColumn, OrdemParadaDataGridViewTextBoxColumn, RazaoSocialDataGridViewTextBoxColumn})
+        dgvSuppliers.DataSource = FornecedoBindingSource
+        dgvSuppliers.Location = New Point(3, 3)
+        dgvSuppliers.Name = "dgvSuppliers"
+        dgvSuppliers.ReadOnly = True
+        dgvSuppliers.Size = New Size(519, 445)
+        dgvSuppliers.TabIndex = 0
         ' 
         ' CNPJDataGridViewTextBoxColumn
         ' 
@@ -453,28 +407,80 @@ Partial Class Form2
         RazaoSocialDataGridViewTextBoxColumn.Name = "RazaoSocialDataGridViewTextBoxColumn"
         RazaoSocialDataGridViewTextBoxColumn.ReadOnly = True
         ' 
+        ' FornecedoBindingSource
+        ' 
+        FornecedoBindingSource.DataSource = GetType(Fornecedo)
+        ' 
+        ' TabPage3
+        ' 
+        TabPage3.Controls.Add(dgvPlants)
+        TabPage3.Location = New Point(4, 25)
+        TabPage3.Name = "TabPage3"
+        TabPage3.Padding = New Padding(3)
+        TabPage3.Size = New Size(525, 451)
+        TabPage3.TabIndex = 2
+        TabPage3.Text = "Plantas"
+        TabPage3.UseVisualStyleBackColor = True
+        ' 
+        ' dgvPlants
+        ' 
+        dgvPlants.AllowUserToAddRows = False
+        dgvPlants.AllowUserToDeleteRows = False
+        dgvPlants.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        dgvPlants.AutoGenerateColumns = False
+        dgvPlants.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+        dgvPlants.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        dgvPlants.Columns.AddRange(New DataGridViewColumn() {CNPJDataGridViewTextBoxColumn1, CodigoDataGridViewTextBoxColumn, DescricaoDataGridViewTextBoxColumn})
+        dgvPlants.DataSource = PlantaBindingSource
+        dgvPlants.Location = New Point(3, 3)
+        dgvPlants.Name = "dgvPlants"
+        dgvPlants.Size = New Size(516, 433)
+        dgvPlants.TabIndex = 0
+        ' 
+        ' CNPJDataGridViewTextBoxColumn1
+        ' 
+        CNPJDataGridViewTextBoxColumn1.DataPropertyName = "CNPJ"
+        CNPJDataGridViewTextBoxColumn1.HeaderText = "CNPJ"
+        CNPJDataGridViewTextBoxColumn1.Name = "CNPJDataGridViewTextBoxColumn1"
+        ' 
+        ' CodigoDataGridViewTextBoxColumn
+        ' 
+        CodigoDataGridViewTextBoxColumn.DataPropertyName = "Codigo"
+        CodigoDataGridViewTextBoxColumn.HeaderText = "Código"
+        CodigoDataGridViewTextBoxColumn.Name = "CodigoDataGridViewTextBoxColumn"
+        ' 
+        ' DescricaoDataGridViewTextBoxColumn
+        ' 
+        DescricaoDataGridViewTextBoxColumn.DataPropertyName = "Descricao"
+        DescricaoDataGridViewTextBoxColumn.HeaderText = "Descrição"
+        DescricaoDataGridViewTextBoxColumn.Name = "DescricaoDataGridViewTextBoxColumn"
+        ' 
+        ' PlantaBindingSource
+        ' 
+        PlantaBindingSource.DataSource = GetType(Planta)
+        ' 
         ' Form2
         ' 
-        AutoScaleDimensions = New SizeF(7F, 16F)
+        AutoScaleDimensions = New SizeF(7.0F, 16.0F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(533, 480)
-        Controls.Add(dataViewSuppliers)
+        Controls.Add(tabsWithData)
         Font = New Font("JetBrainsMonoNL NF", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Name = "Form2"
         Text = "Dados da Viagem"
-        dataViewSuppliers.ResumeLayout(False)
+        tabsWithData.ResumeLayout(False)
         TabPage1.ResumeLayout(False)
         TabPage1.PerformLayout()
         TabPage2.ResumeLayout(False)
-        TabPage3.ResumeLayout(False)
-        CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
+        CType(dgvSuppliers, ComponentModel.ISupportInitialize).EndInit()
         CType(FornecedoBindingSource, ComponentModel.ISupportInitialize).EndInit()
-        CType(dataViewPlantas, ComponentModel.ISupportInitialize).EndInit()
+        TabPage3.ResumeLayout(False)
+        CType(dgvPlants, ComponentModel.ISupportInitialize).EndInit()
         CType(PlantaBindingSource, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 
-    Friend WithEvents dataViewSuppliers As TabControl
+    Friend WithEvents tabsWithData As TabControl
     Friend WithEvents TabPage1 As TabPage
     Friend WithEvents TabPage2 As TabPage
     Friend WithEvents TabPage3 As TabPage
@@ -500,9 +506,9 @@ Partial Class Form2
     Friend WithEvents lblTitleStatus As Label
     Friend WithEvents lblPlan As Label
     Friend WithEvents lblTitlePlan As Label
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents dgvSuppliers As DataGridView
     Friend WithEvents FornecedoBindingSource As BindingSource
-    Friend WithEvents dataViewPlantas As DataGridView
+    Friend WithEvents dgvPlants As DataGridView
     Friend WithEvents PlantaBindingSource As BindingSource
     Friend WithEvents CNPJDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents CodigoGeralDataGridViewTextBoxColumn As DataGridViewTextBoxColumn

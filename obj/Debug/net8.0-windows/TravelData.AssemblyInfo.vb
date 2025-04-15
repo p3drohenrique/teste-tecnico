@@ -16,7 +16,7 @@ Imports System.Reflection
 <Assembly: System.Reflection.AssemblyCompanyAttribute("TravelData"),  _
  Assembly: System.Reflection.AssemblyConfigurationAttribute("Debug"),  _
  Assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0"),  _
- Assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+40d1b948919a6c3afea81a751a85d7087e3f5fd2"),  _
+ Assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e3f044184158e6d3db9a51c39d09a1a597c025f5"),  _
  Assembly: System.Reflection.AssemblyProductAttribute("TravelData"),  _
  Assembly: System.Reflection.AssemblyTitleAttribute("TravelData"),  _
  Assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0"),  _

@@ -19,5 +19,7 @@
         lblStatus.Text = If(_viagem.Status, "Sem status")
         lblPhone.Text = If(_viagem.NumeroFone, "Sem número telefone")
 
+        dgvSuppliers.DataSource = _viagem.Fornecedores
+        dgvPlants.DataSource = _viagem.Plantas
     End Sub
 End Class

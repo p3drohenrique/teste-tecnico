@@ -13,7 +13,7 @@
 
         Dim viagem As Viagem = Await BuscarViagem(fone)
 
-        If viagem Is Nothing Or viagem.Vazia Then
+        If viagem Is Nothing OrElse viagem.Vazia Then
             MsgBox("Não encontramos nenhuma viagem associada a este número.")
             btnSearch.Enabled = True
             Me.Cursor = Cursors.Default

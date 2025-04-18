@@ -49,12 +49,6 @@ Partial Class Form2
         lblTitleTravelNumber = New Label()
         TabPage2 = New TabPage()
         dgvSuppliers = New DataGridView()
-        CNPJDataGridViewTextBoxColumn = New DataGridViewTextBoxColumn()
-        CodigoGeralDataGridViewTextBoxColumn = New DataGridViewTextBoxColumn()
-        DescricaoParadaDataGridViewTextBoxColumn = New DataGridViewTextBoxColumn()
-        EnderecoDataGridViewTextBoxColumn = New DataGridViewTextBoxColumn()
-        OrdemParadaDataGridViewTextBoxColumn = New DataGridViewTextBoxColumn()
-        RazaoSocialDataGridViewTextBoxColumn = New DataGridViewTextBoxColumn()
         FornecedoBindingSource = New BindingSource(components)
         TabPage3 = New TabPage()
         dgvPlants = New DataGridView()
@@ -62,6 +56,12 @@ Partial Class Form2
         CodigoDataGridViewTextBoxColumn = New DataGridViewTextBoxColumn()
         DescricaoDataGridViewTextBoxColumn = New DataGridViewTextBoxColumn()
         PlantaBindingSource = New BindingSource(components)
+        CNPJDataGridViewTextBoxColumn = New DataGridViewTextBoxColumn()
+        Codigo = New DataGridViewTextBoxColumn()
+        CodigoGeralDataGridViewTextBoxColumn = New DataGridViewTextBoxColumn()
+        NomeEmpresa = New DataGridViewTextBoxColumn()
+        OrdemParadaDataGridViewTextBoxColumn = New DataGridViewTextBoxColumn()
+        EnderecoDataGridViewTextBoxColumn = New DataGridViewTextBoxColumn()
         tabsWithData.SuspendLayout()
         TabPage1.SuspendLayout()
         TabPage2.SuspendLayout()
@@ -357,55 +357,13 @@ Partial Class Form2
         dgvSuppliers.AutoGenerateColumns = False
         dgvSuppliers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
         dgvSuppliers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        dgvSuppliers.Columns.AddRange(New DataGridViewColumn() {CNPJDataGridViewTextBoxColumn, CodigoGeralDataGridViewTextBoxColumn, DescricaoParadaDataGridViewTextBoxColumn, EnderecoDataGridViewTextBoxColumn, OrdemParadaDataGridViewTextBoxColumn, RazaoSocialDataGridViewTextBoxColumn})
+        dgvSuppliers.Columns.AddRange(New DataGridViewColumn() {CNPJDataGridViewTextBoxColumn, Codigo, CodigoGeralDataGridViewTextBoxColumn, NomeEmpresa, OrdemParadaDataGridViewTextBoxColumn, EnderecoDataGridViewTextBoxColumn})
         dgvSuppliers.DataSource = FornecedoBindingSource
         dgvSuppliers.Location = New Point(3, 3)
         dgvSuppliers.Name = "dgvSuppliers"
         dgvSuppliers.ReadOnly = True
         dgvSuppliers.Size = New Size(519, 445)
         dgvSuppliers.TabIndex = 0
-        ' 
-        ' CNPJDataGridViewTextBoxColumn
-        ' 
-        CNPJDataGridViewTextBoxColumn.DataPropertyName = "CNPJ"
-        CNPJDataGridViewTextBoxColumn.HeaderText = "CNPJ"
-        CNPJDataGridViewTextBoxColumn.Name = "CNPJDataGridViewTextBoxColumn"
-        CNPJDataGridViewTextBoxColumn.ReadOnly = True
-        ' 
-        ' CodigoGeralDataGridViewTextBoxColumn
-        ' 
-        CodigoGeralDataGridViewTextBoxColumn.DataPropertyName = "CodigoGeral"
-        CodigoGeralDataGridViewTextBoxColumn.HeaderText = "Código Geral"
-        CodigoGeralDataGridViewTextBoxColumn.Name = "CodigoGeralDataGridViewTextBoxColumn"
-        CodigoGeralDataGridViewTextBoxColumn.ReadOnly = True
-        ' 
-        ' DescricaoParadaDataGridViewTextBoxColumn
-        ' 
-        DescricaoParadaDataGridViewTextBoxColumn.DataPropertyName = "DescricaoParada"
-        DescricaoParadaDataGridViewTextBoxColumn.HeaderText = "Local"
-        DescricaoParadaDataGridViewTextBoxColumn.Name = "DescricaoParadaDataGridViewTextBoxColumn"
-        DescricaoParadaDataGridViewTextBoxColumn.ReadOnly = True
-        ' 
-        ' EnderecoDataGridViewTextBoxColumn
-        ' 
-        EnderecoDataGridViewTextBoxColumn.DataPropertyName = "Endereco"
-        EnderecoDataGridViewTextBoxColumn.HeaderText = "Endereço"
-        EnderecoDataGridViewTextBoxColumn.Name = "EnderecoDataGridViewTextBoxColumn"
-        EnderecoDataGridViewTextBoxColumn.ReadOnly = True
-        ' 
-        ' OrdemParadaDataGridViewTextBoxColumn
-        ' 
-        OrdemParadaDataGridViewTextBoxColumn.DataPropertyName = "OrdemParada"
-        OrdemParadaDataGridViewTextBoxColumn.HeaderText = "Ordem de Parada"
-        OrdemParadaDataGridViewTextBoxColumn.Name = "OrdemParadaDataGridViewTextBoxColumn"
-        OrdemParadaDataGridViewTextBoxColumn.ReadOnly = True
-        ' 
-        ' RazaoSocialDataGridViewTextBoxColumn
-        ' 
-        RazaoSocialDataGridViewTextBoxColumn.DataPropertyName = "RazaoSocial"
-        RazaoSocialDataGridViewTextBoxColumn.HeaderText = "Razão Social"
-        RazaoSocialDataGridViewTextBoxColumn.Name = "RazaoSocialDataGridViewTextBoxColumn"
-        RazaoSocialDataGridViewTextBoxColumn.ReadOnly = True
         ' 
         ' FornecedoBindingSource
         ' 
@@ -459,9 +417,51 @@ Partial Class Form2
         ' 
         PlantaBindingSource.DataSource = GetType(Planta)
         ' 
+        ' CNPJDataGridViewTextBoxColumn
+        ' 
+        CNPJDataGridViewTextBoxColumn.DataPropertyName = "CNPJ"
+        CNPJDataGridViewTextBoxColumn.HeaderText = "CNPJ"
+        CNPJDataGridViewTextBoxColumn.Name = "CNPJDataGridViewTextBoxColumn"
+        CNPJDataGridViewTextBoxColumn.ReadOnly = True
+        ' 
+        ' Codigo
+        ' 
+        Codigo.DataPropertyName = "Codigo"
+        Codigo.HeaderText = "Código"
+        Codigo.Name = "Codigo"
+        Codigo.ReadOnly = True
+        ' 
+        ' CodigoGeralDataGridViewTextBoxColumn
+        ' 
+        CodigoGeralDataGridViewTextBoxColumn.DataPropertyName = "CodigoGeral"
+        CodigoGeralDataGridViewTextBoxColumn.HeaderText = "Código Geral"
+        CodigoGeralDataGridViewTextBoxColumn.Name = "CodigoGeralDataGridViewTextBoxColumn"
+        CodigoGeralDataGridViewTextBoxColumn.ReadOnly = True
+        ' 
+        ' NomeEmpresa
+        ' 
+        NomeEmpresa.DataPropertyName = "NomeEmpresa"
+        NomeEmpresa.HeaderText = "Nome Empresa"
+        NomeEmpresa.Name = "NomeEmpresa"
+        NomeEmpresa.ReadOnly = True
+        ' 
+        ' OrdemParadaDataGridViewTextBoxColumn
+        ' 
+        OrdemParadaDataGridViewTextBoxColumn.DataPropertyName = "OrdemParada"
+        OrdemParadaDataGridViewTextBoxColumn.HeaderText = "Ordem de Parada"
+        OrdemParadaDataGridViewTextBoxColumn.Name = "OrdemParadaDataGridViewTextBoxColumn"
+        OrdemParadaDataGridViewTextBoxColumn.ReadOnly = True
+        ' 
+        ' EnderecoDataGridViewTextBoxColumn
+        ' 
+        EnderecoDataGridViewTextBoxColumn.DataPropertyName = "Endereco"
+        EnderecoDataGridViewTextBoxColumn.HeaderText = "Endereço"
+        EnderecoDataGridViewTextBoxColumn.Name = "EnderecoDataGridViewTextBoxColumn"
+        EnderecoDataGridViewTextBoxColumn.ReadOnly = True
+        ' 
         ' Form2
         ' 
-        AutoScaleDimensions = New SizeF(7.0F, 16.0F)
+        AutoScaleDimensions = New SizeF(7F, 16F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(533, 480)
         Controls.Add(tabsWithData)
@@ -510,13 +510,13 @@ Partial Class Form2
     Friend WithEvents FornecedoBindingSource As BindingSource
     Friend WithEvents dgvPlants As DataGridView
     Friend WithEvents PlantaBindingSource As BindingSource
-    Friend WithEvents CNPJDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents CodigoGeralDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents DescricaoParadaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents EnderecoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents OrdemParadaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents RazaoSocialDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents CNPJDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents CodigoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents DescricaoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents CNPJDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents Codigo As DataGridViewTextBoxColumn
+    Friend WithEvents CodigoGeralDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents NomeEmpresa As DataGridViewTextBoxColumn
+    Friend WithEvents OrdemParadaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents EnderecoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class

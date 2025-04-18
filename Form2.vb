@@ -6,6 +6,13 @@
         _viagem = viagem
     End Sub
 
+    Private Class FornecedorSerialzied
+        Inherits Fornecedo
+
+        Public Property Codigo As String
+        Public Property NomeEmpresa As String
+    End Class
+
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         lblTravelNumber.Text = _viagem.NumeroViagem
         lblTravelDate.Text = _viagem.DataViagem
@@ -19,7 +26,26 @@
         lblStatus.Text = If(_viagem.Status Is Nothing OrElse _viagem.Status.Length < 1, "Sem status", _viagem.Status)
         lblPhone.Text = If(_viagem.NumeroFone Is Nothing OrElse _viagem.NumeroFone.Length < 1, "Sem número telefone", _viagem.NumeroFone)
 
-        dgvSuppliers.DataSource = _viagem.Fornecedores
+        Dim index As Integer
+        Dim serializedFornecedor(_viagem.Fornecedores.Length) As FornecedorSerialzied
+
+        For index = 0 To _viagem.Fornecedores.Length - 1
+            Dim DescricaoParada As String = _viagem.Fornecedores(index).DescricaoParada
+            Dim Codigo As String = DescricaoParada.Split("_")(0)
+            Dim NomeEmpresa As String = DescricaoParada.Split("_")(1)
+
+            serializedFornecedor(index) = New FornecedorSerialzied With {
+              .CNPJ = _viagem.Fornecedores(index).CNPJ,
+              .Codigo = Codigo,
+              .NomeEmpresa = NomeEmpresa,
+              .OrdemParada = _viagem.Fornecedores(index).OrdemParada,
+              .CodigoGeral = _viagem.Fornecedores(index).CodigoGeral,
+              .Endereco = _viagem.Fornecedores(index).Endereco
+            }
+
+        Next
+
+        dgvSuppliers.DataSource = serializedFornecedor
         dgvPlants.DataSource = _viagem.Plantas
     End Sub
 End Class

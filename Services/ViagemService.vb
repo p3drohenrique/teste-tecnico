@@ -1,10 +1,6 @@
 ﻿Imports System.Net.Http
 Imports System.Net
-Imports System.Threading.Tasks
-Imports TravelData.Viagem
 Imports Newtonsoft.Json
-Imports System.Text.RegularExpressions
-
 Module ViagemService
     Private Class ViagemResponse
         <JsonProperty("SincronizarResult")>
@@ -17,12 +13,9 @@ Module ViagemService
                 Const Cookie As String = "NSC_mc_psjpocs-rb3-qsfqspe_iuuq=ffffffff09e44c4045525d5f4f58455e445a4a423660"
                 Const URL As String = "https://qa3orionbr-preprod.cevalogistics.com/WCFOrionMobilityMilkRun/Servicos/SincronizarService.svc/Sincronizar"
 
-                Dim serializedFone As String = Regex.Replace(fone, "\D+", "")
-                serializedFone = serializedFone.Trim()
-
                 Dim request As New HttpRequestMessage(HttpMethod.Post, URL)
                 request.Headers.Add("Cookie", Cookie)
-                request.Headers.Add("fone", serializedFone)
+                request.Headers.Add("fone", fone)
 
                 Dim response As HttpResponseMessage = Await client.SendAsync(request)
                 Dim responseBody As String = Await response.Content.ReadAsStringAsync()

@@ -61,7 +61,10 @@ Partial Class Form2
         CodigoGeralDataGridViewTextBoxColumn = New DataGridViewTextBoxColumn()
         NomeEmpresa = New DataGridViewTextBoxColumn()
         OrdemParadaDataGridViewTextBoxColumn = New DataGridViewTextBoxColumn()
-        EnderecoDataGridViewTextBoxColumn = New DataGridViewTextBoxColumn()
+        Cidade = New DataGridViewTextBoxColumn()
+        Bairro = New DataGridViewTextBoxColumn()
+        Logradouro = New DataGridViewTextBoxColumn()
+        NumeroEndereco = New DataGridViewTextBoxColumn()
         tabsWithData.SuspendLayout()
         TabPage1.SuspendLayout()
         TabPage2.SuspendLayout()
@@ -357,7 +360,7 @@ Partial Class Form2
         dgvSuppliers.AutoGenerateColumns = False
         dgvSuppliers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
         dgvSuppliers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        dgvSuppliers.Columns.AddRange(New DataGridViewColumn() {CNPJDataGridViewTextBoxColumn, Codigo, CodigoGeralDataGridViewTextBoxColumn, NomeEmpresa, OrdemParadaDataGridViewTextBoxColumn, EnderecoDataGridViewTextBoxColumn})
+        dgvSuppliers.Columns.AddRange(New DataGridViewColumn() {CNPJDataGridViewTextBoxColumn, Codigo, CodigoGeralDataGridViewTextBoxColumn, NomeEmpresa, OrdemParadaDataGridViewTextBoxColumn, Cidade, Bairro, Logradouro, NumeroEndereco})
         dgvSuppliers.DataSource = FornecedoBindingSource
         dgvSuppliers.Location = New Point(3, 3)
         dgvSuppliers.Name = "dgvSuppliers"
@@ -452,12 +455,33 @@ Partial Class Form2
         OrdemParadaDataGridViewTextBoxColumn.Name = "OrdemParadaDataGridViewTextBoxColumn"
         OrdemParadaDataGridViewTextBoxColumn.ReadOnly = True
         ' 
-        ' EnderecoDataGridViewTextBoxColumn
+        ' Cidade
         ' 
-        EnderecoDataGridViewTextBoxColumn.DataPropertyName = "Endereco"
-        EnderecoDataGridViewTextBoxColumn.HeaderText = "Endereço"
-        EnderecoDataGridViewTextBoxColumn.Name = "EnderecoDataGridViewTextBoxColumn"
-        EnderecoDataGridViewTextBoxColumn.ReadOnly = True
+        Cidade.DataPropertyName = "Cidade"
+        Cidade.HeaderText = "Cidade"
+        Cidade.Name = "Cidade"
+        Cidade.ReadOnly = True
+        ' 
+        ' Bairro
+        ' 
+        Bairro.DataPropertyName = "Bairro"
+        Bairro.HeaderText = "Bairro"
+        Bairro.Name = "Bairro"
+        Bairro.ReadOnly = True
+        ' 
+        ' Logradouro
+        ' 
+        Logradouro.DataPropertyName = "Logradouro"
+        Logradouro.HeaderText = "Logradouro"
+        Logradouro.Name = "Logradouro"
+        Logradouro.ReadOnly = True
+        ' 
+        ' NumeroEndereco
+        ' 
+        NumeroEndereco.DataPropertyName = "NumeroEndereco"
+        NumeroEndereco.HeaderText = "Número do Endereço"
+        NumeroEndereco.Name = "NumeroEndereco"
+        NumeroEndereco.ReadOnly = True
         ' 
         ' Form2
         ' 
@@ -518,5 +542,8 @@ Partial Class Form2
     Friend WithEvents CodigoGeralDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents NomeEmpresa As DataGridViewTextBoxColumn
     Friend WithEvents OrdemParadaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents EnderecoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents Cidade As DataGridViewTextBoxColumn
+    Friend WithEvents Bairro As DataGridViewTextBoxColumn
+    Friend WithEvents Logradouro As DataGridViewTextBoxColumn
+    Friend WithEvents NumeroEndereco As DataGridViewTextBoxColumn
 End Class
